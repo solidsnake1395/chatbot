@@ -1,175 +1,174 @@
 # SOLVEX GROUP - Información de la Empresa
 
 ## 📋 Información General
-- **Nombre:** Solvex Group
-- **Eslogan:** "Soluciones Tecnológicas Innovadoras"
-- **Industria:** Tecnología de la Información y Servicios
-- **Fundada:** 2015
-- **Empleados:** 50-200
+- **Nombre Legal:** Solvex OÜ (SolvexCO OÜ)
+- **Registro Mercantil:** Estonia Nº 16187234
+- **Eslogan:** "Soluciones escalables para tu negocio"
+- **Industria:** Outsourcing B2B y Externalización Empresarial
+- **Web:** https://solvex.group
+- **Sede:** Harju maakond, Tallinn, Kesklinna linnaosa, Tuukri tn 19-315, 10152, Estonia
 
-## 🎯 Misión
-Proporcionar soluciones tecnológicas innovadoras y personalizadas que impulsen la transformación digital de nuestros clientes, garantizando excelencia en cada proyecto.
-
-## 🌟 Visión
-Ser líderes en soluciones tecnológicas a nivel regional, reconocidos por nuestra innovación, calidad y compromiso con el éxito de nuestros clientes.
+## � Propuesta de Valor
+Soluciones de outsourcing B2B que incrementan ventas hasta 35%, reducen costes 40% y mejoran atención al cliente. Implementación en menos de 15 días con resultados garantizados.
 
 ## 💼 Servicios Principales
 
-### 1. Desarrollo de Software a Medida
-- Aplicaciones web progresivas (PWA)
-- Aplicaciones móviles (iOS y Android)
-- Sistemas empresariales (ERP, CRM, SCM)
-- E-commerce y marketplaces
-- APIs y microservicios
-- Automatización de procesos (RPA)
+### 1. Externalización de Ventas
+**Objetivo:** Incrementar ingresos hasta 200-300% sin contratar personal interno
 
-### 2. Consultoría IT
-- Auditoría de sistemas y procesos
-- Planificación estratégica tecnológica
-- Optimización de infraestructura
-- Evaluación de tecnologías
-- Gestión de proyectos IT
-- Arquitectura de soluciones
+**Incluye:**
+- Equipos comerciales especializados
+- Lead generation profesional
+- Cualificación de oportunidades
+- Cierre de ventas
+- Seguimiento post-venta
 
-### 3. Transformación Digital
-- Migración a la nube (AWS, Azure, Google Cloud)
-- Implementación de IA y Machine Learning
-- Análisis de datos y Business Intelligence
-- Automatización inteligente
-- Internet of Things (IoT)
-- Blockchain y tecnologías emergentes
+**Proceso:**
+1. Análisis de necesidades
+2. Diseño de estrategia comercial
+3. Ejecución por expertos
+4. Optimización continua
 
-### 4. Ciberseguridad
-- Evaluación de vulnerabilidades
-- Pruebas de penetración (Pentesting)
-- Implementación de protocolos de seguridad
-- Auditorías de seguridad
-- Capacitación en seguridad informática
-- Monitoreo y respuesta a incidentes (SOC)
+**Resultados:**
+- Incremento 25-35% en conversión
+- Reducción 40% en costes operativos
+- Implementación en 15 días
+- ROI medible y garantizado
 
-### 5. Soporte Técnico
-- Soporte 24/7/365
-- Mantenimiento preventivo y correctivo
-- Help desk especializado
-- Gestión de infraestructura
-- Monitoreo proactivo
-- SLA personalizados
+### 2. Atención al Cliente Profesional
+**Objetivo:** Mejorar 85% en satisfacción del cliente
+
+**Incluye:**
+- Soporte omnicanal (teléfono, email, chat, RRSS)
+- Gestión de consultas y reclamaciones
+- Fidelización de clientes
+- Seguimiento de KPIs
+- Disponibilidad 24/7 (opcional)
+
+**Beneficios:**
+- Experiencia de cliente personalizada
+- Reducción de churn
+- Mayor satisfacción (NPS mejorado)
+- Procesos optimizados
+
+### 3. Recuperación de Clientes Perdidos (Win-Back)
+**Objetivo:** Reactivar clientes inactivos y recuperar ingresos recurrentes
+
+**Metodología:**
+1. Análisis de causas de abandono
+2. Segmentación de clientes perdidos
+3. Contacto personalizado y empático
+4. Propuestas de reactivación a medida
+5. Seguimiento y fidelización
+
+**Resultados:**
+- Recuperación de ingresos perdidos
+- Reactivación de cuentas inactivas
+- Insights sobre mejoras del servicio
+
+### 4. Inteligencia Artificial Empresarial
+**Enfoque:** IA práctica que potencia equipos humanos (no los reemplaza)
+
+**Soluciones:**
+- Chatbots inteligentes 24/7
+- Automatización de procesos repetitivos
+- Análisis de datos y reportes
+- Optimización de workflows
+- Lead scoring automático
+
+**Casos de Uso:**
+- Automatización de atención al cliente
+- Análisis de leads cualificados
+- Reportes automáticos de ventas
+- Clasificación de consultas
+
+**Ventajas:**
+- Disponibilidad 24/7 sin costes adicionales
+- Liberación de tiempo del equipo para tareas estratégicas
+- Datos en tiempo real
+- Escalabilidad instantánea
 
 ## 🏆 Ventajas Competitivas
-- ✅ Equipo altamente calificado y certificado
-- ✅ Metodologías ágiles (Scrum, Kanban)
-- ✅ Tecnologías de última generación
-- ✅ Enfoque en ROI del cliente
-- ✅ Soporte post-implementación
-- ✅ Precios competitivos
-
-## 🛠️ Tecnologías que Manejamos
-
-### Frontend
-- React, Angular, Vue.js
-- Next.js, Nuxt.js
-- TypeScript, JavaScript
-- HTML5, CSS3, Tailwind
-
-### Backend
-- Node.js, Express
-- Python, Django, Flask
-- Java, Spring Boot
-- .NET Core, C#
-- PHP, Laravel
-
-### Bases de Datos
-- PostgreSQL, MySQL
-- MongoDB, Redis
-- Oracle, SQL Server
-- Firebase, DynamoDB
-
-### Cloud & DevOps
-- AWS, Azure, Google Cloud
-- Docker, Kubernetes
-- CI/CD (Jenkins, GitLab CI)
-- Terraform, Ansible
-
-### Mobile
-- React Native
-- Flutter
-- Swift (iOS)
-- Kotlin (Android)
+- ✅ Incremento del 25-35% en conversión de ventas
+- ✅ Reducción del 40% en costes operativos
+- ✅ Mejora del 85% en satisfacción del cliente
+- ✅ Implementación en menos de 15 días
+- ✅ Sin necesidad de contratar personal interno
+- ✅ Equipos especializados por sector
+- ✅ Más de una década de experiencia combinada
+- ✅ Resultados medibles y garantizados
 
 ## 📞 Contacto
 
 ### Información de Contacto
-- **Email:** contacto@solvexgroup.com
-- **Email Comercial:** ventas@solvexgroup.com
-- **Email Soporte:** soporte@solvexgroup.com
-- **Teléfono:** +1 (555) 123-4567
-- **WhatsApp:** +1 (555) 987-6543
+- **Teléfono:** +34 722 108 144
+- **Email:** info@solvex.group
+- **Web:** https://solvex.group
 
 ### Horarios de Atención
-- **Lunes a Viernes:** 9:00 AM - 6:00 PM
-- **Sábados:** 10:00 AM - 2:00 PM
-- **Soporte 24/7:** Disponible para clientes premium
+- **Lunes a Viernes:** 9:00 - 19:00 (horario español)
+- **Consulta Gratuita:** Disponible para todos
+- **Tiempo de Respuesta:** Menos de 24 horas
 
-### Ubicación
+### Ubicación Legal
 ```
-Solvex Group Headquarters
-Tech Park, Building 5, Floor 3
-Ciudad Empresarial
-CP: 12345
-País
+Solvex OÜ
+Harju maakond, Tallinn
+Kesklinna linnaosa
+Tuukri tn 19-315
+10152, Estonia
+Registro Mercantil: 16187234
 ```
 
-## 🎓 Certificaciones
-- ISO 9001:2015 (Gestión de Calidad)
-- ISO 27001:2013 (Seguridad de la Información)
-- AWS Partner Network
-- Microsoft Gold Partner
-- Google Cloud Partner
+## 💰 Modelo de Contratación
+- **Consulta Inicial:** Gratuita
+- **Análisis de Necesidades:** Sin compromiso
+- **Propuesta Personalizada:** A medida de cada cliente
+- **Implementación:** En menos de 15 días
+- **Pago:** Según servicio y volumen
+- **Sin permanencia:** Flexibilidad total
 
-## 💰 Modelos de Contratación
-1. **Proyecto Llave en Mano:** Precio fijo, alcance definido
-2. **Time & Materials:** Pago por horas trabajadas
-3. **Outsourcing:** Equipos dedicados a largo plazo
-4. **Retainer:** Horas mensuales prepagadas
-
-## 📊 Casos de Éxito
-- +150 proyectos completados
-- +80 clientes satisfechos
-- 98% de retención de clientes
-- 4.9/5 rating promedio
+## 📊 Resultados Comprobados
+- Más de una década de experiencia combinada
+- Incrementos de ventas del 25-35%
+- Reducción de costes del 40%
+- Mejora de satisfacción del cliente del 85%
+- Implementación rápida (15 días)
 
 ## 🤝 Sectores que Atendemos
-- Finanzas y Banca
-- Retail y E-commerce
-- Salud y Bienestar
-- Educación
-- Manufactura
-- Logística y Transporte
-- Gobierno
+- B2B / Empresas
+- SaaS y tecnología
+- E-commerce
+- Servicios profesionales
+- Consultoría
+- Formación y educación
+- Cualquier negocio que necesite escalar
 
 ## 📝 Proceso de Trabajo
 
-1. **Consulta Inicial:** Reunión para entender necesidades
-2. **Análisis y Propuesta:** Evaluación técnica y cotización
-3. **Planificación:** Definición de alcance y cronograma
-4. **Desarrollo:** Sprints ágiles con entregas frecuentes
-5. **Testing:** Pruebas exhaustivas (QA)
-6. **Implementación:** Deploy y puesta en producción
-7. **Soporte:** Mantenimiento y mejoras continuas
+1. **Consulta Inicial Gratuita:** Entendemos tus necesidades
+2. **Análisis Detallado:** Evaluamos tu situación actual
+3. **Propuesta Personalizada:** Plan a medida con KPIs claros
+4. **Implementación Rápida:** En menos de 15 días operativos
+5. **Optimización Continua:** Mejora constante basada en datos
+6. **Reportes de Resultados:** Transparencia total con métricas
 
-## 🔗 Redes Sociales
-- **LinkedIn:** linkedin.com/company/solvexgroup
-- **Twitter:** @solvexgroup
-- **Facebook:** facebook.com/solvexgroup
-- **Instagram:** @solvexgroup
-- **YouTube:** SolvexGroup Official
+## 🔗 Enlaces Útiles
+- **Web Principal:** https://solvex.group
+- **Servicios de Ventas:** https://solvex.group/ventas.html
+- **Atención al Cliente:** https://solvex.group/cliente.html
+- **Recuperación Clientes:** https://solvex.group/recovery.html
+- **Inteligencia Artificial:** https://solvex.group/ia.html
+- **Sobre Nosotros:** https://solvex.group/sobre-nosotros.html
+- **Blog:** https://solvex.group/blog.html
+- **Contacto:** https://solvex.group/contacto.html
 
-## 📄 Descarga de Recursos
-- Portafolio de Proyectos (PDF)
-- Casos de Éxito (PDF)
-- Brochure Corporativo (PDF)
-- Presentación de Servicios (PPT)
+## 📄 Páginas Legales
+- **Aviso Legal:** https://solvex.group/aviso-legal.html
+- **Política de Privacidad:** https://solvex.group/politica-privacidad.html
+- **Política de Cookies:** https://solvex.group/cookies.html
 
 ---
 
-**Nota:** Esta información puede ser personalizada según las necesidades reales de Solvex Group.
+**Última Actualización:** 3 de Octubre de 2025
+**Empresa:** Solvex OÜ - Registro Mercantil Estonia Nº 16187234

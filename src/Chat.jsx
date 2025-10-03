@@ -20,6 +20,7 @@ function Chat() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [suggestions, setSuggestions] = useState([]);
   const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
@@ -48,7 +49,20 @@ function Chat() {
 
       const data = await res.json();
 
-      setMessages([...newMessages, { sender: "bot", text: data.reply }]);
+      // Extraer sugerencias si existen
+      let botReply = data.reply;
+      let newSuggestions = [];
+      
+      if (botReply.includes('###SUGERENCIAS###')) {
+        const parts = botReply.split('###SUGERENCIAS###');
+        botReply = parts[0].trim();
+        if (parts[1]) {
+          newSuggestions = parts[1].split('###').map(s => s.trim()).filter(s => s.length > 0);
+        }
+      }
+
+      setMessages([...newMessages, { sender: "bot", text: botReply }]);
+      setSuggestions(newSuggestions);
     } catch (err) {
       console.error("Error al enviar mensaje:", err);
       setMessages([...newMessages, { 
@@ -63,12 +77,36 @@ function Chat() {
 
   const handleQuickOption = (option) => {
     const questions = {
-      'desarrollo': '¿Qué servicios de desarrollo de software ofrecen?',
-      'consultoria': '¿En qué consiste su servicio de consultoría IT?',
-      'transformacion': 'Cuéntame sobre sus servicios de transformación digital',
-      'contacto': '¿Cómo puedo contactar con el equipo comercial?'
+      'ventas': '¿Cómo funciona la externalización de ventas y qué resultados puedo esperar?',
+      'cliente': '¿Qué incluye el servicio de atención al cliente?',
+      'ia': 'Cuéntame sobre las soluciones de inteligencia artificial que ofrecen',
+      'contacto': '¿Cómo puedo agendar una consulta gratuita?'
     };
     sendMessage(questions[option]);
+  };
+
+  const handleSuggestion = (suggestionText) => {
+    setSuggestions([]); // Limpiar sugerencias al hacer click
+    sendMessage(suggestionText);
+  };
+
+  // Función para extraer enlaces del texto
+  const extractLinks = (text) => {
+    if (!text) return { text, links: [] };
+    
+    const links = [];
+    const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+    let match;
+    
+    // Extraer todos los enlaces
+    while ((match = linkRegex.exec(text)) !== null) {
+      links.push({ text: match[1], url: match[2] });
+    }
+    
+    // Remover enlaces del texto
+    const cleanText = text.replace(linkRegex, '');
+    
+    return { text: cleanText, links };
   };
 
   // Función para formatear el texto con markdown simple
@@ -96,30 +134,30 @@ function Chat() {
       <div className="chat-header">
         <div className="company-logo">
           <h1>SOLVEX GROUP</h1>
-          <div className="logo-subtitle">SOLUCIONES TECNOLÓGICAS</div>
+          <div className="logo-subtitle">OUTSOURCING B2B</div>
         </div>
         <h2><MdSupportAgent className="header-icon" /> Asistente Virtual</h2>
-        <p>Soporte técnico y atención al cliente</p>
+        <p>Externalización de Ventas • Atención al Cliente • IA</p>
       </div>
 
       <div className="chat-messages">
         {messages.length === 0 && (
           <div className="welcome-message">
             <h3><FiHelpCircle className="welcome-icon" /> ¡Bienvenido a Solvex Group!</h3>
-            <p>Soy tu asistente virtual especializado en soluciones tecnológicas.</p>
+            <p>Soy tu asistente virtual especializado en outsourcing B2B.</p>
             <p>Puedo ayudarte con información sobre:</p>
             <div className="welcome-options">
-              <span onClick={() => handleQuickOption('desarrollo')}>
-                <FiMonitor className="option-icon" /> Desarrollo de Software
+              <span onClick={() => handleQuickOption('ventas')}>
+                <MdBusinessCenter className="option-icon" /> Externalización de Ventas
               </span>
-              <span onClick={() => handleQuickOption('consultoria')}>
-                <FiSettings className="option-icon" /> Consultoría IT
+              <span onClick={() => handleQuickOption('cliente')}>
+                <MdSupportAgent className="option-icon" /> Atención al Cliente
               </span>
-              <span onClick={() => handleQuickOption('transformacion')}>
-                <FiFileText className="option-icon" /> Transformación Digital
+              <span onClick={() => handleQuickOption('ia')}>
+                <FiSettings className="option-icon" /> Inteligencia Artificial
               </span>
               <span onClick={() => handleQuickOption('contacto')}>
-                <FiUsers className="option-icon" /> Contacto y Cotizaciones
+                <FiUsers className="option-icon" /> Consulta Gratuita
               </span>
             </div>
             <p style={{ marginTop: '20px', fontSize: '0.95em', opacity: '0.85' }}>
@@ -128,18 +166,39 @@ function Chat() {
           </div>
         )}
         
-        {messages.map((m, i) => (
-          <div key={i} className={`message ${m.sender} ${m.isError ? 'error' : ''}`}>
-            <div className="message-bubble">
-              {m.isError && <FiAlertCircle className="error-icon" />}
-              {m.sender === 'bot' ? (
-                <div dangerouslySetInnerHTML={{ __html: formatMessage(m.text) }} />
-              ) : (
-                <p>{m.text}</p>
-              )}
+        {messages.map((m, i) => {
+          const { text, links } = m.sender === 'bot' ? extractLinks(m.text) : { text: m.text, links: [] };
+          
+          return (
+            <div key={i} className={`message ${m.sender} ${m.isError ? 'error' : ''}`}>
+              <div className="message-bubble">
+                {m.isError && <FiAlertCircle className="error-icon" />}
+                {m.sender === 'bot' ? (
+                  <>
+                    <div dangerouslySetInnerHTML={{ __html: formatMessage(text) }} />
+                    {links.length > 0 && (
+                      <div className="message-links">
+                        {links.map((link, idx) => (
+                          <a 
+                            key={idx} 
+                            href={link.url} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="link-button"
+                          >
+                            {link.text} →
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <p>{m.text}</p>
+                )}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
 
         {isLoading && (
           <div className="message bot">
@@ -150,6 +209,21 @@ function Chat() {
                 <span></span>
               </div>
             </div>
+          </div>
+        )}
+
+        {/* Sugerencias de seguimiento */}
+        {suggestions.length > 0 && !isLoading && (
+          <div className="suggestions-container">
+            {suggestions.map((suggestion, idx) => (
+              <button
+                key={idx}
+                className="suggestion-button"
+                onClick={() => handleSuggestion(suggestion)}
+              >
+                {suggestion}
+              </button>
+            ))}
           </div>
         )}
 
