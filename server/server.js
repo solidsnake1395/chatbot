@@ -1,9 +1,17 @@
 import express from "express";
+import cors from "cors";
 import dotenv from "dotenv";
 import { GoogleGenAI } from "@google/genai";
 
 dotenv.config();
 const app = express();
+
+// CORS para permitir peticiones desde el frontend en Netlify
+app.use(cors({
+  origin: process.env.FRONTEND_URL || '*', // En producción, especifica tu URL de Netlify
+  credentials: true
+}));
+
 app.use(express.json());
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
@@ -168,7 +176,12 @@ app.post("/api/chat", async (req, res) => {
   }
 });
 
-const PORT = 5000;
+// Health check endpoint para Render
+app.get("/health", (req, res) => {
+  res.json({ status: "ok", message: "Solvex Chatbot API is running" });
+});
+
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () =>
   console.log(`[SERVER] Backend corriendo en http://localhost:${PORT}`)
 );

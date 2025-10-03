@@ -1,13 +1,44 @@
-# React + Vite
+# 🤖 Solvex Group - Asistente Virtual
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Chatbot inteligente con IA para Solvex Group, empresa especializada en outsourcing B2B.
 
-Currently, two official plugins are available:
+## 🌟 Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ✅ **IA Conversacional** - Powered by Google Gemini 2.0
+- ✅ **Sugerencias Inteligentes** - El bot sugiere preguntas de seguimiento
+- ✅ **Enlaces como Botones** - Links convertidos en botones elegantes
+- ✅ **Diseño Corporativo** - Colores y branding de Solvex Group
+- ✅ **Responsive** - Funciona en desktop y móvil
+- ✅ **Tono Consultivo** - Asistente experto, no vendedor agresivo
 
-## React Compiler
+## 🚀 Deployment
+
+Ver guía completa en **[DEPLOYMENT.md](./DEPLOYMENT.md)**
+
+**Resumen:**
+- Backend → Render.com (gratis)
+- Frontend → Netlify.com (gratis)
+
+## 💻 Desarrollo Local
+
+```bash
+# Instalar dependencias
+npm install
+cd server && npm install && cd ..
+
+# Backend (.env en server/)
+GEMINI_API_KEY=tu_clave_aqui
+
+# Frontend (.env en raíz)
+VITE_API_URL=http://localhost:5000
+
+# Ejecutar (2 terminales)
+cd server && node server.js    # Terminal 1
+npm run dev                     # Terminal 2
+```
+
+Abre: http://localhost:5173
+
 
 The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
