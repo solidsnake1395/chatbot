@@ -16,7 +16,7 @@ import {
 } from "react-icons/md";
 import "./Chat.css";
 
-function Chat() {
+function Chat({ config = {}, isOpen: externalIsOpen, onToggle, externalMessage } = {}) {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -249,3 +249,4 @@ function Chat() {
 }
 
 export default Chat;
+
