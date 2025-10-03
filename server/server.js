@@ -162,13 +162,15 @@ app.post("/api/chat", async (req, res) => {
   try {
     const { message } = req.body;
 
+    // Combinar el system prompt con el mensaje del usuario
+    const fullPrompt = `${systemPrompt}\n\nUsuario: ${message}\n\nAsistente:`;
+
     const response = await ai.models.generateContent({
       model: "gemini-2.0-flash",
-      systemInstruction: systemPrompt,
       contents: [
         { 
           role: "user",
-          parts: [{ text: message }] 
+          parts: [{ text: fullPrompt }] 
         }
       ],
     });
@@ -180,6 +182,7 @@ app.post("/api/chat", async (req, res) => {
     res.status(500).json({ error: "Error al conectar con Gemini" });
   }
 });
+
 
 // Health check endpoint para Render
 app.get("/health", (req, res) => {
