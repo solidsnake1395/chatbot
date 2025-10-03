@@ -172,7 +172,18 @@
 
 .message {
   display: flex;
-  animation: fadeIn 0.3s ease-in;
+  animation: slideInMessage 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideInMessage {
+  from {
+    opacity: 0;
+    transform: translateY(15px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 @keyframes fadeIn {
@@ -195,34 +206,148 @@
 }
 
 .message-bubble {
-  max-width: 75%;
-  padding: 14px 20px;
-  border-radius: 20px;
+  max-width: 80%;
+  padding: 16px 22px;
+  border-radius: 18px;
   word-wrap: break-word;
-  line-height: 1.5;
+  line-height: 1.6;
+  position: relative;
+  animation: fadeIn 0.3s ease-in;
 }
 
 .message.user .message-bubble {
   background: var(--accent-gradient);
   color: var(--text-light);
-  border-bottom-right-radius: 6px;
-  box-shadow: var(--shadow-medium);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom-right-radius: 4px;
+  box-shadow: 0 3px 12px rgba(0, 200, 150, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   font-weight: 500;
 }
 
 .message.bot .message-bubble {
-  background: linear-gradient(135deg, var(--white) 0%, var(--bg-light) 100%);
+  background: var(--white);
   color: var(--text-dark);
-  border-bottom-left-radius: 6px;
-  box-shadow: var(--shadow-medium);
-  border: 1px solid var(--border-light);
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 121, 107, 0.15);
+  border-left: 4px solid var(--primary-color);
+  position: relative;
+}
+
+/* Efecto de profundidad para respuestas del bot */
+.message.bot .message-bubble::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  background: linear-gradient(135deg, rgba(0, 121, 107, 0.05), transparent);
+  border-radius: 18px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.message.bot .message-bubble:hover::before {
+  opacity: 1;
 }
 
 .message-bubble p {
   margin: 0;
-  line-height: 1.6;
+  line-height: 1.7;
   font-size: 0.98em;
+  color: inherit;
+}
+
+/* Mejorar el formato del texto en respuestas del bot */
+.message.bot .message-bubble p {
+  color: var(--text-dark);
+  font-size: 1em;
+  line-height: 1.8;
+}
+
+/* Soporte para listas en respuestas */
+.message-bubble ul,
+.message-bubble ol {
+  margin: 10px 0;
+  padding-left: 24px;
+}
+
+.message-bubble li {
+  margin: 6px 0;
+  line-height: 1.7;
+  list-style-type: disc;
+}
+
+.message.bot .message-bubble li {
+  color: var(--text-dark);
+}
+
+.message-bubble ul {
+  list-style-type: disc;
+}
+
+.message-bubble ol {
+  list-style-type: decimal;
+}
+
+/* Soporte para código en respuestas */
+.message-bubble code {
+  background: rgba(0, 121, 107, 0.1);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-family: 'Courier New', Monaco, monospace;
+  font-size: 0.9em;
+  color: var(--primary-color);
+  border: 1px solid rgba(0, 121, 107, 0.2);
+}
+
+/* Soporte para enlaces en respuestas */
+.message-bubble a {
+  color: var(--primary-blue);
+  text-decoration: underline;
+  transition: color 0.2s ease;
+  font-weight: 500;
+}
+
+.message-bubble a:hover {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+/* Soporte para texto en negrita */
+.message-bubble strong,
+.message-bubble b {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+/* Soporte para texto en cursiva */
+.message-bubble em,
+.message-bubble i {
+  font-style: italic;
+  color: var(--secondary-color);
+}
+
+/* Párrafos en respuestas del bot */
+.message.bot .message-bubble br + br {
+  display: block;
+  content: "";
+  margin-top: 8px;
+}
+
+/* Espaciado entre secciones */
+.message.bot .message-bubble > * + * {
+  margin-top: 8px;
+}
+
+/* Avatar o icono del bot (opcional) */
+.message.bot::before {
+  content: '🤖';
+  font-size: 1.5em;
+  margin-right: 10px;
+  display: none; /* Activar si quieres un avatar */
 }
 
 .message.error .message-bubble {
@@ -239,39 +364,58 @@
 }
 
 .message-bubble.loading {
-  padding: 20px 30px;
+  padding: 18px 28px;
+  background: var(--white);
+  border-left: 4px solid var(--accent-color);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 4px 15px rgba(0, 200, 150, 0.2);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(0, 200, 150, 0.4);
+  }
 }
 
 .typing-indicator {
   display: flex;
-  gap: 5px;
+  gap: 6px;
   align-items: center;
   justify-content: center;
 }
 
 .typing-indicator span {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  background: #999;
-  animation: typing 1.4s infinite;
+  background: var(--primary-color);
+  animation: typingBounce 1.4s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(1) {
+  animation-delay: 0s;
+  background: var(--primary-color);
 }
 
 .typing-indicator span:nth-child(2) {
   animation-delay: 0.2s;
+  background: var(--primary-blue);
 }
 
 .typing-indicator span:nth-child(3) {
   animation-delay: 0.4s;
+  background: var(--accent-color);
 }
 
-@keyframes typing {
+@keyframes typingBounce {
   0%, 60%, 100% {
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
     opacity: 0.7;
   }
   30% {
-    transform: translateY(-10px);
+    transform: translateY(-12px) scale(1.1);
     opacity: 1;
   }
 }

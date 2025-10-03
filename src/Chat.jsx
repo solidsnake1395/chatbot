@@ -71,6 +71,26 @@ function Chat() {
     sendMessage(questions[option]);
   };
 
+  // Función para formatear el texto con markdown simple
+  const formatMessage = (text) => {
+    if (!text) return '';
+    
+    // Convertir **texto** a <strong>
+    let formatted = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    
+    // Convertir *texto* a <em>
+    formatted = formatted.replace(/\*(.*?)\*/g, '<em>$1</em>');
+    
+    // Convertir saltos de línea a <br>
+    formatted = formatted.replace(/\n/g, '<br>');
+    
+    // Convertir listas simples
+    formatted = formatted.replace(/^- (.*?)$/gm, '<li>$1</li>');
+    formatted = formatted.replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
+    
+    return formatted;
+  };
+
   return (
     <div className="chat-container">
       <div className="chat-header">
@@ -112,7 +132,11 @@ function Chat() {
           <div key={i} className={`message ${m.sender} ${m.isError ? 'error' : ''}`}>
             <div className="message-bubble">
               {m.isError && <FiAlertCircle className="error-icon" />}
-              <p>{m.text}</p>
+              {m.sender === 'bot' ? (
+                <div dangerouslySetInnerHTML={{ __html: formatMessage(m.text) }} />
+              ) : (
+                <p>{m.text}</p>
+              )}
             </div>
           </div>
         ))}
