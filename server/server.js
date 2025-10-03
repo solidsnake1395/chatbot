@@ -162,20 +162,21 @@ app.post("/api/chat", async (req, res) => {
   try {
     const { message } = req.body;
 
-    // Enviar el prompt del sistema como mensaje con role 'system' y el mensaje del usuario por separado
+    // SDK does not accept a 'system' role, so prepend the system prompt to the user's message
+    const fullPrompt = `${systemPrompt}\n\nUsuario: ${message}\n\nAsistente:`;
+
     const response = await ai.models.generateContent({
       model: "gemini-2.0-flash",
       contents: [
         {
-          role: "system",
-          parts: [{ text: systemPrompt }]
-        },
-        {
           role: "user",
-          parts: [{ text: message }]
+          parts: [{ text: fullPrompt }]
         }
       ],
     });
+
+    // Log response for debugging (can be removed in production)
+    console.log('Gemini raw response:', JSON.stringify(response, null, 2));
 
     const reply = response.candidates?.[0]?.content?.parts?.[0]?.text || "Lo siento, no pude procesar tu solicitud. Por favor, intenta nuevamente.";
     res.json({ reply });
