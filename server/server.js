@@ -162,15 +162,17 @@ app.post("/api/chat", async (req, res) => {
   try {
     const { message } = req.body;
 
-    // Combinar el system prompt con el mensaje del usuario
-    const fullPrompt = `${systemPrompt}\n\nUsuario: ${message}\n\nAsistente:`;
-
+    // Enviar el prompt del sistema como mensaje con role 'system' y el mensaje del usuario por separado
     const response = await ai.models.generateContent({
       model: "gemini-2.0-flash",
       contents: [
-        { 
+        {
+          role: "system",
+          parts: [{ text: systemPrompt }]
+        },
+        {
           role: "user",
-          parts: [{ text: fullPrompt }] 
+          parts: [{ text: message }]
         }
       ],
     });
