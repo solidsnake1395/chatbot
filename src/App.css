@@ -1,0 +1,19 @@
+#root {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  #root {
+    padding: 0;
+    overflow: hidden;
+  }
+}
