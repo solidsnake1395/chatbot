@@ -1,13 +1,13 @@
-# 🤖 Solvex Group - Asistente Virtual
+# 🤖 Asistente Virtual con IA
 
-Chatbot inteligente con IA para Solvex Group, empresa especializada en outsourcing B2B.
+Chatbot inteligente con IA para tu empresa.
 
 ## 🌟 Características
 
 - ✅ **IA Conversacional** - Powered by Google Gemini 2.0
 - ✅ **Sugerencias Inteligentes** - El bot sugiere preguntas de seguimiento
 - ✅ **Enlaces como Botones** - Links convertidos en botones elegantes
-- ✅ **Diseño Corporativo** - Colores y branding de Solvex Group
+- ✅ **Diseño Corporativo** - Personalizable para tu marca
 - ✅ **Responsive** - Funciona en desktop y móvil
 - ✅ **Tono Consultivo** - Asistente experto, no vendedor agresivo
 

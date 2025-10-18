@@ -1,5 +1,5 @@
 // ============================================
-// SOLVEX CHATBOT - WEB COMPONENT WRAPPER
+// CHATBOT - WEB COMPONENT WRAPPER
 // Archivo: src/chatbot-webcomponent.jsx
 // ============================================
 
@@ -8,10 +8,10 @@ import { createRoot } from 'react-dom/client';
 import Chat from './Chat';
 
 /**
- * Web Component personalizado para el Chatbot de Solvex
+ * Web Component personalizado para el Chatbot
  * Permite integrar el chatbot React en cualquier página HTML
  */
-class SolvexChatbotElement extends HTMLElement {
+class ChatbotElement extends HTMLElement {
   constructor() {
     super();
     this.root = null;
@@ -200,17 +200,17 @@ function ChatWrapper({ config, element }) {
 }
 
 // Registrar el Custom Element
-if (!customElements.get('solvex-chatbot')) {
-  customElements.define('solvex-chatbot', SolvexChatbotElement);
+if (!customElements.get('custom-chatbot')) {
+  customElements.define('custom-chatbot', ChatbotElement);
 }
 
 // Exponer API global
-window.SolvexChatbot = {
+window.Chatbot = {
   version: '1.0.0',
   
   // Crear instancia programáticamente
   create(selector, config = {}) {
-    const element = document.createElement('solvex-chatbot');
+    const element = document.createElement('custom-chatbot');
     
     // Aplicar configuración
     Object.entries(config).forEach(([key, value]) => {
@@ -231,8 +231,8 @@ window.SolvexChatbot = {
   
   // Obtener todas las instancias
   getInstances() {
-    return document.querySelectorAll('solvex-chatbot');
+    return document.querySelectorAll('custom-chatbot');
   }
 };
 
-export default SolvexChatbotElement;
+export default ChatbotElement;

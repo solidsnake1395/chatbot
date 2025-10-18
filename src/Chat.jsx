@@ -135,7 +135,7 @@ function Chat({ config = {}, isOpen: externalIsOpen, onToggle, externalMessage }
     <div className="chat-container">
       <div className="chat-header">
         <div className="company-logo">
-          <h1>SOLVEX GROUP</h1>
+          <h1>ASISTENTE VIRTUAL</h1>
           <div className="logo-subtitle">OUTSOURCING B2B</div>
         </div>
         <h2><MdSupportAgent className="header-icon" /> Asistente Virtual</h2>
@@ -145,7 +145,7 @@ function Chat({ config = {}, isOpen: externalIsOpen, onToggle, externalMessage }
       <div className="chat-messages">
         {messages.length === 0 && (
           <div className="welcome-message">
-            <h3><FiHelpCircle className="welcome-icon" /> ¡Bienvenido a Solvex Group!</h3>
+            <h3><FiHelpCircle className="welcome-icon" /> ¡Bienvenido!</h3>
             <p>Soy tu asistente virtual especializado en outsourcing B2B.</p>
             <p>Puedo ayudarte con información sobre:</p>
             <div className="welcome-options">

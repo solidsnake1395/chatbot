@@ -8,8 +8,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'src/chatbot-webcomponent-simple.jsx'),
-      name: 'SolvexChatbot',
-      fileName: 'solvex-chatbot',
+      name: 'Chatbot',
+      fileName: 'chatbot',
       formats: ['iife']
     },
 
@@ -20,7 +20,7 @@ export default defineConfig({
         inlineDynamicImports: true,
         assetFileNames: (assetInfo) => {
           if (assetInfo.name === 'style.css') {
-            return 'solvex-chatbot.css';
+            return 'chatbot.css';
           }
           return assetInfo.name;
         }

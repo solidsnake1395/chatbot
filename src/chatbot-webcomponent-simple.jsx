@@ -1,5 +1,5 @@
 // ============================================
-// SOLVEX CHATBOT - WEB COMPONENT (VERSIÓN SIMPLE)
+// CHATBOT - WEB COMPONENT (VERSIÓN SIMPLE)
 // Sin Shadow DOM - Compatible con UMD
 // ============================================
 
@@ -9,9 +9,9 @@ import Chat from './Chat';
 import './Chat.css';
 
 /**
- * Web Component simple para el Chatbot de Solvex
+ * Web Component simple para el Chatbot
  */
-class SolvexChatbotElement extends HTMLElement {
+class ChatbotElement extends HTMLElement {
   constructor() {
     super();
     this.reactRoot = null;
@@ -31,7 +31,7 @@ class SolvexChatbotElement extends HTMLElement {
   connectedCallback() {
     // Crear contenedor
     const container = document.createElement('div');
-    container.id = 'solvex-chatbot-container';
+    container.id = 'chatbot-container';
     container.style.cssText = `
       position: fixed;
       ${this.getPositionStyles()}
@@ -164,21 +164,19 @@ class SolvexChatbotElement extends HTMLElement {
 }
 
 // Registrar el Web Component
-if (typeof window !== 'undefined' && !customElements.get('solvex-chatbot')) {
-  customElements.define('solvex-chatbot', SolvexChatbotElement);
-  console.log('✅ Solvex Chatbot Web Component registrado');
+if (typeof window !== 'undefined' && !customElements.get('custom-chatbot')) {
+  customElements.define('custom-chatbot', ChatbotElement);
+  console.log('✅ Chatbot Web Component registrado');
 }
 
 // Exportar para uso en módulos
-export default SolvexChatbotElement;
+export default ChatbotElement;
 
 // API Global para crear instancias programáticamente
 if (typeof window !== 'undefined') {
-  window.SolvexChatbot = {
-    create: function(selector, config = {}) {
-      const chatbot = document.createElement('solvex-chatbot');
-      
-      Object.keys(config).forEach(key => {
+  window.Chatbot = {
+    init() {
+      const chatbot = document.createElement('custom-chatbot');      Object.keys(config).forEach(key => {
         const attr = key.replace(/([A-Z])/g, '-$1').toLowerCase();
         chatbot.setAttribute(attr, config[key]);
       });

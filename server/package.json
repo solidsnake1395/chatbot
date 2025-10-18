@@ -1,8 +1,8 @@
 {
-  "name": "solvex-chatbot-backend",
+  "name": "chatbot-backend",
   "version": "1.0.0",
   "type": "module",
-  "description": "Backend API para Solvex Group Chatbot",
+  "description": "Backend API para Chatbot",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"

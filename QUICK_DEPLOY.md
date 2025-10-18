@@ -19,7 +19,7 @@
 
 2. **Configuración:**
    ```
-   Name: solvex-chatbot-api
+   Name: chatbot-api
    Root Directory: server
    Build: npm install
    Start: npm start
@@ -31,7 +31,7 @@
    ```
 
 4. **Deploy** → Espera 3-5 min
-5. **Copia la URL**: `https://solvex-chatbot-api-xxxx.onrender.com`
+5. **Copia la URL**: `https://chatbot-api-xxxx.onrender.com`
 
 ---
 
